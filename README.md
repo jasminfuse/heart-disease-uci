@@ -17,10 +17,21 @@ This creates a virtual environment and then activates it. If you want to exit th
 
     $ deactivate
 
-### Install Pelican & Dependancies
+## Clone the Repository
 
+    $ git clone https://github.com/jasminfuse/heart-disease-uci.git
+
+Now get inside the project folder
+
+    $ cd heart-disease-uci
+
+### Install Pelican & Dependancies
 Use `pip` to install the list of dependencies (including Pelican) into your virtual environment:
 
     $ pip install -r requirements.txt
 
+## Run Flask Application
 
+    $ python app.py
+
+This runs the project in port [5000](http://localhost:5000/) of your local device.
