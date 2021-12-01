@@ -28,4 +28,4 @@ def predict_disease():
 
 
 if __name__=="__main__":
-    app.run()
+    app.run(host="localhost")
