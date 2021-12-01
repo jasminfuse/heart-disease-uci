@@ -11,4 +11,10 @@ with open('models/model.pkl', 'rb') as model_file:
     loaded_classifier = pickle.load(model_file)
 
 def predict(input):
-    return loaded_classifier.predict(input)
+    target_label = loaded_classifier.predict(input)
+
+    if target_label==[0]:
+        result = " heart disease."
+    else:
+        result =  "no heart disease."
+    return result
