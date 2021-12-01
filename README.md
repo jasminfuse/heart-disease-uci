@@ -17,7 +17,7 @@ This creates a virtual environment and then activates it. If you want to exit th
 
     $ deactivate
 
-## Clone the Repository
+### Clone the Repository
 
     $ git clone https://github.com/jasminfuse/heart-disease-uci.git
 
@@ -30,7 +30,7 @@ Use `pip` to install the list of dependencies (including Pelican) into your virt
 
     $ pip install -r requirements.txt
 
-## Run Flask Application
+### Run Flask Application
 
     $ python app.py
 
