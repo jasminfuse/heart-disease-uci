@@ -1,0 +1,96 @@
+
+<html>
+    <head>
+        <title>Patient Detail Form</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+    <style type=text/css>
+        #btn_i {
+            width:100px;
+        }
+        #formbox {
+            width:750px;
+            margin:auto 0;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <h2>Enter data to check for heart disease</h2>
+        <form action="{{url_for('predict_disease')}}" method="POST">
+            <table width="800" border="1.5" cellspacing="3" cellpadding="3">
+                <!-- <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="full_name" maxlength="40"></td>
+                </tr> -->
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" name="age" min="5" max="100" required></td>
+                </tr>
+                <tr>    
+                    <td>Sex [1=Male, 0=Female] </td>
+                    <td><input type="number" name="sex"  min="0" max="1" required></td>
+                </tr>
+                <tr>
+                    <td>Chest Pain  [ 0: asymptomatic, 1: atypical angina, 2: non-anginal pain, 3: typical angina]</td>
+                    <td><input type="number" name="cp"  min="0" max="3" required></td>
+                </tr>
+                <tr>
+                    <td>Resting Blood Pressure in mm/hg </td>
+                    <td><input type="number" name="rest_bp" min="40" max="280" required></td>
+                </tr>
+                <tr>
+                    <td>Serum Cholesterol in mg/dl</td>
+                    <td><input type="number" name="chol" required></td>
+                </tr>
+                <tr>
+                    <td>Fast Blood Sugar>120mg/d [0 = No  1 = Yes])l</td>
+                    <td><input type="number" name="fast_bs" min="0" max="1" required></td>
+                </tr>
+                <tr>
+                    <td>Rest ECG [0: Left ventricular hypertrophy, 1: Normal, 2: ST-T wave abnormality</td>
+                    <td><input type="number" name="ecg" min="0" max="2" required></td>
+                </tr>
+                <tr>
+                    <td>Max Heart Rate Achieved</td>
+                    <td><input type="number" name="heart_rate" required></td>
+                </tr>
+                <tr>
+                    <td>Exercise Induced Angina [0 = No, 1 = Yes]</td>
+                    <td><input type="number" name="exe" min="0" max="1" required></td>
+                </tr>
+                <tr>
+                    <td>Old Peak</td>
+                    <td><input type="number" name="old_peak" step="any" required></td>
+                </tr>
+                <tr>
+                    <td>Slope of peak exercise [0: Downsloping; 1: Flat; 2: Upsloping]</td>
+                    <td><input type="number" name="slope" min="0" max="2" required></td>
+                </tr>
+                <tr>
+                    <td>Number of major vessels</td>
+                    <td><input type="number" name="no_of_blood_vessel" min="0" max="3" required></td>
+                </tr>
+                <tr>
+                    <td>Thalessemia</td>
+                    <td><input type="number" name="thal" min="1" max="3" required></td>
+                </tr>
+                <!-- <td> Predict</td>
+                <td><input type="submit" value="Submit"></td> -->
+            </table>
+            <div id="formbox">
+                <center>
+                <td> Predict</td>
+                <td><input type="submit" value="Submit"></td>
+                </center>
+            </tr>
+            </div>
+               <!-- Show predicted output using ML model --> 
+            <div>
+                <center>
+                    <h2>{{ prediction_text }}</h2>
+                </center>
+            </div>
+        </form>
+    </body>
+</html>
